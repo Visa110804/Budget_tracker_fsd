@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('http://citizenleaderlab.org/wp-content/uploads/2024/05/What-is-Financial-Management.jpg.webp'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.login-container {
+  background: rgba(212, 121, 9, 0.92); /* Slight transparency for readability */
+  padding: 2rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgb(0, 0, 0);
+  width: 300px;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #090411;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #000000;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-btn {
+  background-color: #0adb2a;
+  color: white;
+}
+
+.login-btn:hover {
+  background-color: #0adb2a;
+}
+
+.register-btn {
+  background-color: #0adb2a;
+  color: white;
+}
+
+.register-btn:hover {
+  background-color: #0dca29;
+}

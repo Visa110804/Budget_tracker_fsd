@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page</title>
+  <link rel="stylesheet" href="sky.css" />
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter username" required />
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter password" required />
+      </div>
+      <div class="button-group">
+        <button type="submit" class="login-btn">Login</button>
+        <button type="button" class="register-btn">Register</button>
+      </div>
+    </form>
+    <script>
+  document.getElementById("loginForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    // Simple login check (you can enhance this with backend)
+    if (username === "user" && password === "pass") {
+      // Redirect to the main page (budget tracker)
+      window.location.href = "budget.html"; // or your main index.html
+    } else {
+      alert("Invalid username or password!");
+    }
+  });
+</script>
+
+  </div>
+</body>
+</html>

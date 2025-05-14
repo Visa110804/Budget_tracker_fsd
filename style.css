@@ -1,0 +1,248 @@
+/* Ultra Creative and Innovative CSS for Budget Tracker with Better Background Visibility and Floating Coins */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: url('/mnt/data/4732f1e5-76c2-4c6c-8120-4214d49d9b06.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 2s ease;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-image: url('https://www.completecontroller.com/wp-content/uploads/money-management-Complete-Controller.jpg');
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
+/* Floating Coins */
+.coin {
+    position: fixed;
+    width: 20px;
+    height: 40px;
+    background: url('https://cdn-icons-png.flaticon.com/512/3135/3135715.png') no-repeat center center;
+    background-size: cover;
+    animation: floatCoin 10s infinite linear;
+    z-index: 0;
+    opacity: 0.8;
+    bottom: -50px;
+}
+
+@keyframes floatCoin {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-120vh) rotate(360deg);
+    }
+}
+
+/* Random coin positions */
+.coin:nth-child(1) { left: 10%; animation-delay: 0s; }
+.coin:nth-child(2) { left: 25%; animation-delay: 2s; }
+.coin:nth-child(3) { left: 40%; animation-delay: 4s; }
+.coin:nth-child(4) { left: 55%; animation-delay: 6s; }
+.coin:nth-child(5) { left: 70%; animation-delay: 8s; }
+.coin:nth-child(6) { left: 85%; animation-delay: 1s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+    z-index: 1;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0px 8px 32px 0 rgba(0, 0, 0, 0.37);
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    z-index: 1;
+}
+
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    margin: 10px 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 20px 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+input[type="text"] {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/482/482947.png');
+}
+
+input[type="number"] {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1170/1170627.png');
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #74ebd5;
+    box-shadow: 0 0 10px #74ebd5;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: linear-gradient(270deg, #ff758c, #ff7eb3, #ffc3a0);
+    background-size: 600% 600%;
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-position 0.5s, transform 0.3s;
+    position: relative;
+    animation: gradientFlow 8s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+button::before {
+    content: "";
+    background: url('https://cdn-icons-png.flaticon.com/512/992/992651.png') no-repeat center center;
+    background-size: 20px 20px;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+li.income::before {
+    content: "";
+    background: url('https://cdn-icons-png.flaticon.com/512/1907/1907937.png') no-repeat center center;
+    background-size: 20px 20px;
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+li.expense::before {
+    content: "";
+    background: url('https://cdn-icons-png.flaticon.com/512/2620/2620479.png') no-repeat center center;
+    background-size: 20px 20px;
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+li.income {
+    border-left: 5px solid #00c853;
+}
+
+li.expense {
+    border-left: 5px solid #d50000;
+}
+
+.delete-btn {
+    background: #ff5252;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.delete-btn:hover {
+    background: #ff1744;
+    transform: scale(1.1);
+}
+
+.balance {
+    margin-top: 20px;
+    font-size: 1.7rem;
+    color: #222;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 80%;
+    z-index: 1;
+}
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}

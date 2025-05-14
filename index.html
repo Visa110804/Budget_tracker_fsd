@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- SheetJS for Excel -->
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+<!-- jsPDF for PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Budget Tracker</h1>
+        <div class="section">
+            <h2>Set Your Budget</h2>
+            <input type="number" id="budgetInput" placeholder="Enter your budget" required>
+            <button onclick="setBudget()">Set Budget</button>
+            <p id="budgetMessage"></p>
+        </div>
+        <div class="section">
+            <h2>Add Earnings</h2>
+            <input type="number" id="earningsAmount" placeholder="Enter earnings amount" required>
+            <input type="text" id="earningsCategory" placeholder="Category (e.g., Salary)" required>
+            <button onclick="addEarnings()">Add Earnings</button>
+        </div>
+        <div class="section">
+            <h2>Add Spending</h2>
+            <input type="number" id="spendingAmount" placeholder="Enter spending amount" required>
+            <input type="text" id="spendingCategory" placeholder="Category (e.g., Grocery)" required>
+            <button onclick="addSpending()">Add Spending</button>
+        </div>
+        <div class="section">
+            <h2>Add Expense</h2>
+            <input type="number" id="expenseAmount" placeholder="Enter expense amount" required>
+            <input type="text" id="expenseCategory" placeholder="Category (e.g., Rent)" required>
+            <button onclick="addExpense()">Add Expense</button>
+        </div>
+        <div class="section">
+            <h2>Transaction List</h2>
+            <ul id="transactionList"></ul>
+        </div>
+        <div class="section">
+            <h2>Budget Status</h2>
+            <p>Total Earnings: <span id="totalEarnings">₹0</span></p>
+            <p>Total Spending: <span id="totalSpending">₹0</span></p>
+            <p>Total Expenses: <span id="totalExpenses">₹0</span></p>
+            <p>Remaining Budget: <span id="remainingBudget">₹0</span></p>
+        </div>
+        <div class="section">
+            <h2>Spending vs Earnings Chart</h2>
+            <canvas id="financeChart"></canvas>
+        </div>
+        <div class="section">
+            <h2>Category-wise Expenses</h2>
+            <canvas id="categoryChart"></canvas>
+        </div>
+        <div class="section">
+            <a href="saving-goal.html">Go to Saving Goal Space→</a>
+        </div>
+
+        <div class="section">
+            <h2>Export Your Data</h2>
+            <button onclick="exportToPDF()">Export to PDF</button>
+            <button onclick="exportToExcel()">Export to Excel</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
